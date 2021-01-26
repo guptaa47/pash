@@ -5,8 +5,10 @@ PAD_LEN = 7 # needs to add a space character for when they exceed
 
 def parseLine(s):
   global PAD_LEN
-  # FIXME: This could identify padding number
-  return map(int, s.split())
+  parse_res = map(int, s.split())
+  if (len(parse_res) == 1):
+    PAD_LEN = 0
+  return parse_res
 
 def emitLine(t):
   global PAD_LEN
